@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tpz.intensify.MainActivity"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+    <ImageView
+        app:srcCompat="@drawable/intensify"
+        android:id="@+id/scaleBar"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="310dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Min: "
+            android:id="@+id/min"
+            android:visibility="invisible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max: "
+            android:id="@+id/max"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        app:srcCompat="@drawable/intensify"
+        android:id="@+id/imageView"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <Button
+            android:text="Capture Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/capture"
+            android:layout_weight="1"/>
+
+        <Button
+            android:text="ROI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ROI"
+            android:layout_weight="1"/>
+        <Button
+            android:text="Drawing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/drawing"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+            android:id="@+id/rangeSeekbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:min_value="0"
+            app:max_value="100"
+            app:data_type="_float" />
+
+        <TextView
+            android:text="0.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMin"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/rangeSeekbar" />
+
+        <TextView
+            android:text="100.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMax"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/rangeSeekbar" />
+    </RelativeLayout>
+
+</LinearLayout>
